@@ -1,0 +1,230 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+turbo-frame {
+    display: block;
+    border: 1px solid #ccc;
+}
+
+.login-container,
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+}
+
+.tab-button.active {
+    color: #4caf50;
+    border-bottom: 2px solid #4caf50;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.field {
+    margin-bottom: 15px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#new_message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    width: 100%;
+}
+
+.new_message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 20%;
+    border-top: 1px solid #eee;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new_message form {
+    max-width: 800px; /* Reduced max-width for better centering */
+    width: 100%;
+    margin: 0 auto; /* This centers the form */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.new_message input[type="text"] {
+    flex: 1;
+    max-width: 75%;
+    padding: 12px 20px;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.new_message input[type="text"]:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.1);
+}
+
+.new_message input[type="submit"] {
+    margin: 0 10px;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #6c5ce7, #a367fc);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.new_message input[type="submit"]:hover {
+    transform: scale(1.25);
+    background: linear-gradient(45deg, #5a4bd4, #8f52e8);
+}
+
+#messages {
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    #new_message {
+        padding: 15px 5%;
+    }
+    #new_message form {
+        gap: 12px; /* Slightly smaller gap on mobile */
+    }
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.actions input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.error-messages {
+    color: red;
+    margin-bottom: 15px;
+}
+
+.register-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+#messages {
+    margin: 20px 0;
+}
+
+#messages p {
+    margin: 5px 0;
+    font-family: monospace;
+}
+
+#messages time {
+    color: #666;
+    margin-right: 4px;
+    display: inline-block;
+    box-shadow: #666;
+    position: relative;
+}
+
+#messages time:hover:after {
+    content: attr(full_date);
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+#messages strong {
+    font-weight: bold;
+    color: mediumslateblue;
+    margin-right: 2px;
+}
+
+#messages:hover {
+    background-color: #f8f9fa;
+}

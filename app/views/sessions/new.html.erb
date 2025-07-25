@@ -1,0 +1,46 @@
+<div class="login-container">
+  <% if flash[:alert] %>
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
+  <div class="login-tabs">
+    <button class="tab-button active" data-tab="guest">Guest Mode</button>
+    <button class="tab-button" data-tab="login">Login</button>
+  </div>
+
+  <div id="guest-form" class="tab-content active">
+    <h2>Enter as Guest</h2>
+    <%= form_with(url: login_path, local: true) do |f| %>
+      <div class="field">
+        <%= f.label :guest_name, "Your Name" %>
+        <%= f.text_field :guest_name, required: true, placeholder: "Enter your name" %>
+        <%= f.hidden_field :guest, value: true %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Continue as Guest" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="login-form" class="tab-content">
+    <h2>Login</h2>
+    <%= form_with(url: login_path, local: true) do |f| %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, required: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password, required: true %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+    <% end %>
+  </div>
+</div>

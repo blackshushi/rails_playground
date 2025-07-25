@@ -1,0 +1,37 @@
+<div class="register-container">
+  <h2>Register</h2>
+
+  <%= form_with(model: @user, local: true) do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error-messages">
+        <% @user.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, required: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Register" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,6 @@
+<%= form_with(model: [ room, message ], local: false) do |form| %>
+  <div class="new_message">
+    <%= form.text_field :content, placeholder: "Type a message..." %>
+    <%= form.submit "Send" %>
+  </div>
+<% end %>
