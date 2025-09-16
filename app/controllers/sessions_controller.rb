@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [:new, :create]
   def new
-    redirect_to rooms_path if current_user || guest_user?
+    redirect_to root_path if current_user
   end
 
   def create
@@ -25,7 +26,7 @@ class SessionsController < ApplicationController
     end
 
     session[:guest_name] = params[:guest_name]
-    redirect_to rooms_path, notice: "Welcome, #{params[:guest_name]}"
+    redirect_to root_path, notice: "Welcome, #{params[:guest_name]}"
   end
 
   def create_user_session
@@ -37,6 +38,6 @@ class SessionsController < ApplicationController
     end
 
     session[:user_id] = user.id
-    redirect_to rooms_path, notice: 'Logged in successfully'
+    redirect_to root_path, notice: 'Logged in successfully'
   end
 end

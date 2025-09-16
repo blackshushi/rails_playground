@@ -1,0 +1,16 @@
+<div class="chat-container">
+  <!-- Session-aware UI -->
+    <% if current_user_name %>
+      <p>Hello, <%= current_user_name %>!</p>
+    <% end %>
+
+    <% if current_user %>
+      <%= link_to "Logout", logout_path, class: "btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% else %>
+      <%= link_to "Login", login_path, class: "btn btn-success" %>
+    <% end %>
+
+    <br>
+
+    <%= link_to 'Chatrooms', rooms_path, class: 'btn btn-primay' %>
+</div>

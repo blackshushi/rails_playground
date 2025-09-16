@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   helper_method :current_user, :current_user_name, :guest_user?
-  before_action :authenticate_user!, except: [:new, :create]
+  before_action :authenticate_user!
 
   private
   def current_user
